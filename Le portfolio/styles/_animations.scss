@@ -1,0 +1,9 @@
+.project-container {
+    @include fade-in(0.8s);
+  }
+  
+  button:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+  }
+  

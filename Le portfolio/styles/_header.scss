@@ -1,0 +1,29 @@
+header {
+    background-color: $primary-color;
+    color: white;
+  
+    nav {
+      @include flex-center;
+      justify-content: space-between;
+  
+      ul {
+        list-style-type: none;
+        padding: 0;
+  
+        li {
+          margin-right: $spacing-unit;
+  
+          a {
+            text-decoration: none;
+            color: white;
+  
+            &:hover {
+              color: $secondary-color;
+              transition: color 0.3s ease-in-out;
+            }
+          }
+        }
+      }
+    }
+  }
+  

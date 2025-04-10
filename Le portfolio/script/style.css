@@ -1,0 +1,909 @@
+/* Définition des variables globales */
+/* Couleur en mode sombnre */
+:root {
+    --text: #f4edfd; /* Couleur du texte */
+    --background: #110f13; /* Couleur de fond */
+    --primary: #a564f5; /* Couleur principale */
+    --secondary: #7e679c; /* Couleur secondaire */
+    --accent: #04F671; /* Couleur d'accentuation */
+    --icons: invert(); /* Filtre pour les icônes */
+    --fill: #ece2f9; /* Couleur de remplissage */
+    --icon-toggle: url('https://www.svgrepo.com/download/432507/light-mode.svg'); /* Icône pour le bouton toggle */
+    --svgbackground: #331e4e; /* Fond des SVG */
+    --navbackground: linear-gradient(0deg, transparent, rgba(0, 0, 0, 0.7)); /* Fond du menu de navigation */
+    --filtre: invert(0); /* Filtre par défaut */
+}
+
+/* Couleur en mode clair */
+:root[data-theme="light"] {
+    --text: #161722;
+    --background: #f3edf8;
+    --primary: #4c06a2;
+    --secondary: #9179ac;
+    --accent: #09FB76;
+    --icons: none;
+    --fill: #10061e;
+    --icon-toggle: url('images/icons/light_mode_icon.svg');
+    --svgbackground: #b59fd3;
+    --navbackground: linear-gradient(0deg, transparent, rgba(255, 255, 255, 0.7));
+    --filter: invert(1)
+}
+
+/* Application des variables aux styles globaux */
+body {
+    background-color: var(--background);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--primary);
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+button {
+    background-color: var(--primary);
+    color: var(--text);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--secondary);
+}
+
+.icon-toggle {
+    background-image: var(--icon-toggle);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+}
+
+nav {
+    background: var(--navbackground);
+}
+
+svg {
+    background-color: var(--svgbackground);
+}
+
+footer {
+    background-color: var(--secondary);
+    color: var(--text);
+    text-align: center;
+    padding: 20px;
+}
+
+/* Couleur en mode clair */
+:root[data-theme="light"] {
+    --text: #161722; /* Couleur du texte */
+    --background: #f3edf8; /* Couleur de fond */
+    --primary: #4c06a2; /* Couleur principale */
+    --secondary: #9179ac; /* Couleur secondaire */
+    --accent: #09FB76; /* Couleur d'accentuation */
+    --icons: none;
+    --fill: #10061e;
+    --icon-toggle: url('images/icons/light_mode_icon.svg');
+    --svgbackground: #b59fd3;
+    --navbackground: linear-gradient(0deg, transparent, rgba(255, 255, 255, 0.7));
+    --filter: invert(1);
+}
+
+/* Ajustement des traits sous les mots */
+.underline {
+    position: relative;
+}
+
+.underline::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    bottom: -2px; /* Ajuste la position du trait */
+    left: 0.6ch;
+    width: 100%;
+    transform-origin: left;
+    height: 20%; /* Réduction de la hauteur du surlignage pour un trait plus fin */
+    background: var(--primary); /* Utilise la couleur principale */
+}
+
+/* Application des styles globaux */
+body {
+    background-color: var(--background);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--primary);
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+button {
+    background-color: var(--primary);
+    color: var(--text);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--secondary);
+}
+
+.icon-toggle {
+    background-image: var(--icon-toggle);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+}
+
+nav {
+    background: var(--navbackground);
+}
+
+svg {
+    background-color: var(--svgbackground);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#main-content {
+    flex: 1; /* Permet au contenu principal de prendre tout l'espace disponible */
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+}
+
+footer {
+    background-color: var(--secondary);
+    color: var(--text);
+    text-align: center;
+    padding: 20px;
+}
+
+
+/* Footer amélioré pour un design plus esthétique */
+footer {
+    background-color: var(--secondary); /* Couleur de fond du footer */
+    color: var(--text); /* Couleur du texte dans le footer */
+    text-align: center;
+    padding: 20px;
+}
+
+/* Classe permettant de mettre en gras tout texte ayant la class strong */
+.strong {
+    font-weight: 900;
+}
+
+/* CSS permettant d'ajouter un surlignage personnalisé */
+.underline {
+    position: relative;
+}
+
+button {
+    cursor: pointer;
+}
+
+.underline::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    bottom: -2px; /* Ajuste la position du trait */
+    left: 0.6ch;
+    width: 100%;
+    transform-origin: left;
+    height: 20%; /* Réduction de la hauteur du surlignage pour un trait plus fin */
+    background: var(--primary); /* Couleur principale */
+}
+
+/* Liens stylisés */
+.link {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    background-color: #7D2AE2;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 800;
+    padding: 1.3vh 1.3vw;
+    width: fit-content;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all .2s ease-in-out;
+    align-items: center;
+}
+
+.link svg {
+    width: 30px;
+    transition: all .3s ease-in-out;
+}
+
+.link:hover {
+    border-radius: 25px; /* Effet arrondi au survol */
+}
+
+.link:hover svg {
+    transform: translateX(5px) translateY(-3px);
+}
+
+.next-project .link:hover svg {
+    transform: translateX(5px);
+}
+
+/* Changement du style de la scrollbar */
+/* Taille de la scrollbar */
+::-webkit-scrollbar {
+    width: 9px;
+}
+
+/* Couleur de fond secondaire de la scrollbar */
+::-webkit-scrollbar-track {
+    background: #232027;
+}
+
+/* Couleur de fond primaire de la scrollbar */
+::-webkit-scrollbar-thumb {
+    background: #949494;
+}
+
+/* Couleur de fond primaire de la scrollbar au hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #d8d7d7;
+}
+
+.icons {
+    filter: var(--icons);
+}
+
+.link-icon {
+    text-decoration: none;
+}
+
+a {
+    color: var(--primary);
+    font-size: 800; /* Taille du texte des liens */
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text);
+    margin: 0;
+    font-family: 'Syne', sans-serif; /* Police moderne */
+    overflow-x: hidden; /* Empêche le débordement horizontal */
+}
+
+/* Footer amélioré pour un design esthétique */
+footer {
+    background-color: var(--secondary); /* Couleur de fond du footer */
+    color: var(--text); /* Couleur du texte dans le footer */
+    text-align: center; /* Centrer le contenu du footer */
+    padding: 20px; /* Espacement interne */
+}
+
+/* Ajout d'une margin pour chacune de mes sections */
+section {
+    margin: 0 3% 150px 3%;
+}
+
+/* Ajout d'un padding sur des sections spécifiques */
+#a-propos, #projects, #contact {
+    padding-top: 50px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#a-propos .resume-detail, #contact .contact-text {
+    margin-left: 1%;
+}
+
+/* Ajout d'une margin spécifique sur ma section contact */
+#contact {
+    margin-bottom: 170px;
+}
+
+/* CSS de ma nav */
+nav {
+    position: fixed;
+    z-index: 5;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    font-size: 1.4rem;
+    font-weight: 800;
+    animation: fadeInDown 1.5s ease-in-out;
+    transition: all .5s ease-in-out;
+    backdrop-filter: blur(5px);
+    background: var(--navbackground);
+}
+
+nav ul {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    transform: scale(1);
+}
+
+nav li a {
+    position: relative;
+    text-decoration: none;
+    color: var(--text);
+    transition: margin 0.25s;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    filter: var(--filter);
+}
+
+nav .mid li a::after, .link-hover::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    width: 0;
+    height: 3px;
+    background-color: var(--primary);
+    margin-top: 5px;
+    transition: width 0.3s ease-in-out;
+}
+
+nav .mid li a:hover::after, .link-hover:hover::after {
+    width: 100%;
+    transition: width 0.3s ease-in-out;
+}
+
+nav ul li:active {
+    transform: scale(0.9);
+}
+
+nav .mid {
+    gap: 50px;
+}
+
+nav .left {
+    width: 20%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+nav .left li {
+    height: 190px;
+    padding-top: 2.5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav img {
+    height: 50px;
+}
+
+nav .right li {
+    border-radius: 5px;
+    padding: 5px 15px;
+    padding-bottom: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#theme-toggle {
+    background: var(--icon-toggle) no-repeat center center;
+    background-size: contain;
+    border: none;
+    padding: 0;
+    width: 65px;
+    height: 65px;
+    filter: var(--icons);
+}
+
+#nav-mobile {
+    display: none;
+    height: 100%;
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    color: #ece2f9;
+    background: #232027;
+    top: 0;
+}
+
+#nav-mobile #SVGRepo_iconCarrier * {
+    stroke: #ece2f9;
+}
+
+.navigation-mobile {
+    display: flex;
+    flex-direction: column;
+    background: #232027;
+}
+
+/* Section hero */
+#hero {
+    display: flex;
+    align-items: center;
+    place-content: center;
+    height: 100vh;
+    position: relative;
+    justify-content: start;
+}
+
+.line-left {
+    display: flex;
+    gap: 15px;
+    height: 100%;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+}
+
+.line-hero {
+    width: 1px;
+    height: 78%;
+    background-color: var(--text);
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+.line-icons {
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.line-icons a {
+    text-decoration: none;
+}
+
+.line-icons i {
+    font-size: 2.3rem;
+    color: var(--text);
+}
+
+#hero .hero-container {
+    text-transform: uppercase;
+    width: max-content;
+    margin: 2%;
+}
+
+#hero-title {
+    font-size: 6rem;
+    font-weight: 800;
+    color: var(--text);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    margin: 0;
+    padding: 0;
+}
+
+#hero-title span {
+    color: var(--primary);
+}
+
+#hero .char {
+    transform: translateY(115px);
+    transition: transform .5s;
+}
+
+#hero #hero-paragraphe {
+    font-size: 1.8rem;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+#hero #animate-background {
+    transform: translate(-50%);
+    max-width: 1100px;
+    position: absolute;
+    z-index: -100;
+    filter: blur(20px);
+    fill: var(--svgbackground);
+    pointer-events: none;
+    transform: none;
+    transition: transform 10000ms ease-out;
+    padding: 2px;
+}
+
+
+
+/* CSS de mon indicateur de scroll */
+#hero .scroll-downs {
+    position: absolute;
+    right: 0;
+    bottom: 5%;
+    left: 0;
+    margin: auto;
+    width: 34px;
+    height: 55px;
+}
+
+#hero .mousey {
+    width: 3px;
+    padding: 9px 14px;
+    height: 35px;
+    border: 2px solid;
+    border-color: var(--secondary);
+    border-radius: 25px;
+    opacity: 0.75;
+    box-sizing: content-box;
+    cursor: pointer;
+}
+
+#hero .scroller {
+    width: 3px;
+    height: 10px;
+    border-radius: 25%;
+    background-color: var(--secondary);
+    animation-name: scroll;
+    animation-duration: 2.2s;
+    animation-timing-function: cubic-bezier(.15, .41, .69, .94);
+    animation-iteration-count: infinite;
+}
+
+@keyframes scroll {
+    0% {
+        opacity: 0;
+    }
+
+    10% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(15px);
+        opacity: 0;
+    }
+}
+
+/* CSS de ma section a-propos */
+#a-propos .resume {
+    display: flex;
+    flex-direction: column;
+}
+
+#a-propos .resume .resume-content {
+    display: flex;
+    flex-direction: row;
+    gap: 15%;
+}
+
+#a-propos .resume .resume-content img {
+    width: 400px;
+    height: auto;
+    border-radius: 10px;
+}
+
+#a-propos .resume .resume-content .resume-text {
+    max-width: 50%;
+}
+
+.title {
+    font-size: 2.8rem;
+    text-transform: uppercase;
+}
+
+#a-propos .resume p {
+    font-size: 1.3rem;
+}
+
+#a-propos .skills .skills-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* 4 colonnes pour les 4 catégories */
+    gap: 20px;
+    /* Espacement entre les colonnes et les lignes */
+    justify-content: center;
+    margin: 0 100px;
+    justify-items: center;
+}
+
+.skills {
+    margin: 120px 0;
+}
+
+.skills h3 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 20px;
+}
+
+.skills .skills-list h4 {
+    font-size: 1.5rem;
+}
+
+.skills .skills-list li p {
+    padding: 7px;
+    font-size: 1.225rem;
+    margin: 0;
+}
+
+.skills ul>li:nth-child(odd)>p i {
+    background: linear-gradient(53deg, var(--primary) 35%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.skills .skills-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skills .skills-list li {
+    padding-bottom: 3%;
+}
+
+.skills .skills-list li img {
+    width: 20px;
+    margin-right: 3%;
+}
+
+
+/* CSS de ma section projects */
+/* Section Mes Projets */
+#projects {
+    padding: 50px 20px;
+    background-color: var(--background); /* Couleur de fond du site */
+    color: var(--text); /* Écriture générale en blanc */
+}
+
+#projects .title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: var(--primary); /* Couleur principale pour le titre */
+    text-transform: uppercase; /* Texte en majuscules */
+}
+
+#projects .project {
+    margin-bottom: 40px;
+    padding: 20px 0; /* Espacement interne uniquement vertical */
+    border-bottom: 1px solid var(--primary); /* Ligne séparatrice entre les projets */
+}
+
+#projects .project:last-child {
+    border-bottom: none; /* Supprime la ligne pour le dernier projet */
+}
+
+#projects .project h3 {
+    font-size: 1.8rem; /* Taille du titre des projets */
+    color: var(--text); /* Couleur blanche pour le texte */
+    font-weight: bold; /* Texte en gras */
+    margin-bottom: 10px;
+}
+
+#projects .project p {
+    font-size: 1rem; /* Taille du texte descriptif */
+    line-height: 1.6; /* Espacement entre les lignes */
+}
+
+/* CSS de ma section contact */
+.contact-content {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    gap: 100px;
+}
+
+.contact-content a {
+    text-decoration: none;
+}
+
+.contact-header {
+    max-width: 600px;
+    font-size: 1.225rem;
+}
+
+.contact-icon {
+    width: 48px;
+    height: 48px;
+}
+
+.contact-card-content {
+    display: flex;
+    align-items: center;
+    width: clamp(240px, 100%, 640px);
+    height: fit-content;
+    padding: 12px 20px;
+    gap: 16px;
+    background: #1d1e30;
+    border-radius: 16px;
+    filter: drop-shadow(0 32px 32px rgba(0, 0, 0, .08));
+    transition: all .2s ease;
+    color: #ece2f9;
+}
+
+.contact-card-content:nth-child(odd):hover {
+    rotate: 1deg;
+}
+
+.contact-card-content:hover {
+    rotate: -1deg;
+}
+
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    height: 100%;
+}
+
+.contact-card-text {
+    display: flex;
+    flex-direction: column;
+    color: #ece2f9;
+}
+
+.contact-card-text * {
+    padding: 10px;
+    margin: 0;
+}
+
+
+.burger-menu {
+    border: none;
+    background: transparent;
+}
+
+#SVGRepo_iconCarrier * {
+    stroke: var(--text);
+}
+
+/* Par défaut, masquez la navigation */
+#header-nav .hidden {
+    display: none;
+}
+
+/* Affichez la navigation si la largeur de l'écran est supérieure à 1020px */
+@media screen and (min-width: 1020px) {
+    #header-nav .hidden {
+        display: flex;
+    }
+
+    #header-nav .burger-nav {
+        display: none;
+    }
+
+    nav .right {
+        width: 20%;
+    }
+
+    .contact-list {
+        width: 700px;
+    }
+
+    .container-left {
+        height: 300px;
+    }
+
+    nav {
+        margin: 0 3%;
+    }
+
+}
+
+@media screen and (max-width: 1330px) {
+    .Footer_blob-container, #animate-background {
+        display: none;
+    }
+}
+
+/* Affichez l'icône de menu si la largeur de l'écran est inférieure à 1020px */
+@media screen and (max-width: 1020px) {
+    .title {
+        font-size: 2.3rem;
+    }
+
+    section {
+        margin: 0 13px;
+    }
+
+    #header-nav .burger-menu {
+        display: block;
+    }
+
+    #header-nav .hidden {
+        display: none;
+    }
+
+    nav .left {
+        margin: 0 13px;
+    }
+
+    nav img {
+        width: 35px;
+    }
+
+    #hero .scroll-downs {
+        display: none;
+    }
+
+    #hero-title {
+        font-size: 3rem;
+    }
+
+    #a-propos th, td {
+        padding: 0;
+    }
+
+    #a-propos .resume .resume-content {
+        gap: 50px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    #a-propos .resume .resume-content .resume-text {
+        max-width: 100%;
+    }
+
+    #a-propos .skills .skills-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 50px;
+        justify-items: normal;
+    }
+
+    #a-propos .resume .resume-content img {
+        width: 100%;
+    }
+
+    #projects ul {
+        gap: 10px;
+    }
+
+    #projects .project-container {
+        max-width: 100%;
+    }
+
+    #projects .container-right h3 {
+        font-size: 1.7rem;
+    }
+
+    #projects .project-container {
+        gap: 40px;
+        flex-wrap: wrap;
+    }
+
+    .contact-list {
+        width: 85%;
+        align-items: flex-start;
+    }
+
+    .contact-content {
+        flex-wrap: wrap;
+        gap: 45px;
+    }
+
+}

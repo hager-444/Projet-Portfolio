@@ -1,0 +1,14 @@
+footer {
+    background-color: $secondary-color;
+    color: white;
+  
+    .footer-content {
+      @include flex-center;
+      padding: $spacing-unit;
+  
+      span {
+        font-size: $font-size-base;
+      }
+    }
+  }
+  

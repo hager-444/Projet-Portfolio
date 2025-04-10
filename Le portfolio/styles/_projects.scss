@@ -1,0 +1,7 @@
+#projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: $spacing-unit; // Utilisez une variable SASS pour le gap
+    padding: $spacing-unit * 2; // Doublez l'espacement avec une variable
+  }
+  

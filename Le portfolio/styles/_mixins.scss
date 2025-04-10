@@ -1,0 +1,20 @@
+// Mixin pour centrer avec Flexbox
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  // Mixin pour une animation de fade-in
+  @mixin fade-in($duration) {
+    animation: fade-in $duration ease-in-out;
+    @keyframes fade-in {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  }
+  
